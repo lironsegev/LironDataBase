@@ -35,11 +35,19 @@ public class MainActivity extends AppCompatActivity {
         db = hlp.getWritableDatabase();
         db.close();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         String st = item.getTitle().toString();
         if(st.equals("Credits")){
-            Toast.makeText(this, "App was created by Tomer Ben Ari", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "App was created by Liron Segev", Toast.LENGTH_SHORT).show();
         }
         if (st.equals("Change Activity")){
             Intent t = new Intent(this, SecondActivity.class);
